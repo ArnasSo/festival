@@ -1,0 +1,177 @@
+import anastasiaImg from "../assets/landing-anastasia.png";
+import benjaminImg from "../assets/landing-benjamin-hav.png";
+import bonadImg from "../assets/landing-bonad.png";
+import downtownImg from "../assets/landing-downtown-july.png";
+import elakelaisetImg from "../assets/landing-elakelaiset.png";
+import gnagsImg from "../assets/landing-gnags.png";
+import infernalImg from "../assets/landing-infernal.png";
+import karolineMousingImg from "../assets/landing-karoline-mousing.png";
+import larsLilholtImg from "../assets/landing-lars-lilholt-band.png";
+import marieFrankImg from "../assets/landing-marie-frank.png";
+import naturalBornHippiesImg from "../assets/landing-natural-born-hippies.png";
+import runeRaskImg from "../assets/landing-rune-rask-hampenberg.png";
+import saveusImg from "../assets/landing-saveus.png";
+import selvgladImg from "../assets/landing-selvglad.png";
+import specktorsImg from "../assets/landing-specktors.png";
+import tosedrengeImg from "../assets/landing-tosedrenge-tur.png";
+import zarPauloImg from "../assets/landing-zar-paulo.png";
+
+
+const artists = [
+
+    {
+        id: 1,
+        name: "Anastasia",
+        location: "Birkelunden",
+        time: "15.15",
+        tags: ["music", "alternative rock"],
+        description: "Anastasia blends alternative rock, dreamy melodies, and emotional intensity into a powerful live experience. Expect atmospheric soundscapes, dynamic energy, and music that moves between vulnerability and strength.",
+        image: anastasiaImg,
+    },
+    {
+        id: 2,
+        name: "Benjamin Hav",
+        location: "Vidunderblå",
+        time: "22.15",
+        tags: ["music", "rap", "pop"],
+        description: "Benjamin Hav is known for his energetic performances, playful lyrics, and genre-blending sound. Experience a mix of rap, pop, and electronic music as Benjamin Hav brings his unique atmosphere to Blå Sol Festival.",
+        image: benjaminImg,
+    },
+    {
+        id: 3,
+        name: "Bonad",
+        location: "Dragonen",
+        time: "23.30",
+        tags: ["music", "indie", "rock"],
+        description: "Bonad creates energetic indie rock with raw emotion, catchy rhythms, and a modern Nordic sound. Look forward to vibrant live music, strong melodies, and an atmosphere filled with energy and movement.", 
+        image: bonadImg,
+    },
+    {
+        id: 4,
+        name: "Downtown July",
+        location: "Dragonen",
+        time: "18.00",
+        tags: ["music", "electronic pop", "rock"],
+        description: "Downtown July blends catchy indie rock, dreamy melodies, and raw energy into an atmospheric live experience. Enjoy an emotional and uplifting concert filled with powerful vocals, vibrant guitars, and late-summer festival vibes.",
+        image: downtownImg,
+    },
+    {
+        id: 5,
+        name: "Eläkeläiset",
+        location: "Byfesten",
+        time: "15.10",
+        tags: ["music", "finnish", "humppa"],
+        description: "Eläkeläiset is a Finish band known for their humorous covers of popular songs reimagined in a lively Finnish humppa style. Expect chaotic energy, surprising song transformations, and a concert experience full of humor and dancing.",
+        image: elakelaisetImg,
+    },
+    {
+        id: 6,
+        name: "Gnags",
+        location: "Vidunderblå",
+        time: "13.45",
+        tags: ["music", "rock", "pop"],
+        description: "Gnags is a legendary band known for their colorful sound, poetic lyrics, and mix of rock, pop, and reggae influences. Enjoy a lively concert experience filled with iconic melodies, warm energy, and Danish music history.",
+        image: gnagsImg,
+    },
+    {
+        id: 7,
+        name: "Infernal",
+        location: "Vidunderblå",
+        time: "16.30",
+        tags: ["music", "electronic pop"],
+        description: "Infernal is an electronic pop duo known for their dance hits, energetic performances, and iconic club sound. Experience catchy beats, nostalgic party anthems, and a high-energy atmosphere live on stage.",
+        image: infernalImg,
+    },
+    {
+        id: 8,
+        name: "Karoline Mousing",
+        location: "Dragonen",
+        time: "15.20",
+        tags: ["music", "pop", "hip hop"],
+        description: "Karoline Mousing creates atmospheric music with emotional storytelling, soft vocals, and a modern Scandinavian sound. Discover an intimate live performance filled with reflective lyrics, calm energy, and immersive melodies.",
+        image: karolineMousingImg,
+    },
+    {
+        id: 9,
+        name: "Lars Lilholt Band",
+        location: "Byfesten",
+        time: "18.00",
+        tags: ["music", "folk", "rock"],
+        description: "Lars Lilholt Band is known for combining folk, rock, and storytelling into energetic live performances. Expect powerful sing-alongs, warm stage presence, and music that brings audiences together.",
+        image: larsLilholtImg,
+    },
+    {
+        id: 10,
+        name: "Marie Frank",
+        location: "Birkelunden",
+        time: "14.00",
+        tags: ["music", "pop", "folk"],
+        description: "Marie Frank creates melodic folk-inspired pop with emotional lyrics, soft vocals, and an intimate atmosphere. Discover a heartfelt live performance filled with reflective songwriting and warm acoustic sounds.",
+        image: marieFrankImg,
+    },
+    {
+        id: 11,
+        name: "Natural Born Hippies",
+        location: "Byfesten",
+        time: "12.50",
+        tags: ["music", "pop", "feel-good"],
+        description: "Natural Born Hippies is known for their feel-good pop sound, laid-back energy, and nostalgic hits from the late 90s and 2000s. Enjoy melodic pop songs, warm summer vibes, and a relaxed concert experience full of nostalgia.",
+        image: naturalBornHippiesImg,
+    },
+    {
+        id: 12,
+        name: "Rune Rask & Hampenberg",
+        location: "Byfesten",
+        time: "23.40",
+        tags: ["music", "electronic", "hip hop"],
+        description: "Rune Rask & Hampenberg combines electronic dance music, hip hop influences, and high-energy club vibes. Look forward to heavy beats, nostalgic party tracks, and an atmosphere built for dancing late into the night.",
+        image: runeRaskImg,
+    },
+    {
+        id: 13,
+        name: "Saveus",
+        location: "Vidunderblå",
+        time: "12.45",
+        tags: ["music", "electronic pop", "rock"],
+        description: "Saveus is known for their emotional vocals, cinematic sound, and energetic live performances. Enjoy a powerful mix of electronic pop, rock, and atmospheric melodies as he brings his intense musical universe to the stage.",
+        image: saveusImg,
+    },
+    {
+        id: 14,
+        name: "Selvglad",
+        location: "Birkelunden",
+        time: "16.20",
+        tags: ["music", "pop", "electronic"],
+        description: "Selvglad combines energetic pop, electronic elements, and playful lyrics into and upbeat live experience. Expect vibrant rhytms, colorful performances, and an atmosphere focused on fun and movement.",
+        image: selvgladImg,
+    },
+    {
+        id: 15,
+        name: "Specktors",
+        location: "Dragonen",
+        time: "21.00",
+        tags: ["music", "rap", "electronic"],
+        description: "Specktors is a duo known for blending rap, electronic music, and a party anthems with high energy and humor. Experience hard-hitting beats, catchy hooks, and a lively concert atmosphere built for dancing and singing along.",
+        image: specktorsImg,
+    },
+    {
+        id: 16,
+        name: "Tøsedrenge Tur",
+        location: "Byfesten",
+        time: "20.50",
+        tags: ["music", "funk", "pop"],
+        description: "Tøsedrenge Tur brings the iconic Danish sound of funk, pop, and reggae-inspired rhythms back to the stage. Experience nostalgic classics, upbeat melodies, and a lively atmosphere filled with Danish music history.",
+        image: tosedrengeImg,
+    },
+    {
+        id: 17,
+        name: "Zar Paulo",
+        location: "Vidunderblå",
+        time: "19.25",
+        tags: ["music", "indie", "rock"],
+        description: "Zar Paulo is known for their energetic indie sound, sharp lyrics, and playful mix of rock, pop, and post-punk influences. Experiences catchy melodies, high energy, and an unforgettable atmosphere made for singing along.",
+        image: zarPauloImg,
+    },
+];
+
+export default artists;
