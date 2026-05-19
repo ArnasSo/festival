@@ -1,9 +1,10 @@
 import LandingEventCard from "../../components/cards/LandingEventCard/LandingEventCard";
 import eventsData from "../../data/events.json";
 import { useOutletContext } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DetailOverlay from "../../components/overlays/DetailOverlay/DetailOverlay";
 import MyPlanOverlay from "../../components/overlays/MyPlanOverlay/MyPlanOverlay";
+import Header from "../../components/layout/Header/Header";
 import styles from "./LandingPage.module.css";
 
 import HighlightCard from "../../components/cards/HighlightCard/HighlightCard";
@@ -30,8 +31,17 @@ export default function LandingPage() {
     savedEvents.includes(event.id)
   );
 
+  useEffect(() => {
+  document.body.classList.add("no-scroll");
+
+  return () => {
+    document.body.classList.remove("no-scroll");
+  };
+}, []);
+
   return (
     <div className={styles.landingPage}>
+      <Header />
       <section className={styles.quickLinks}>
   <HighlightCard
     label="My Plan"

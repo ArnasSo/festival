@@ -1,10 +1,8 @@
 import { Outlet } from "react-router-dom";
 import BottomNav from "../src/components/layout/BottomNav/BottomNav";
-import Header from "../src/components/layout/Header/Header";
 import { useEffect, useState } from "react";
 
 export default function Layout() {
-
   // Loads saved events from localStorage when app starts
   const [savedEvents, setSavedEvents] = useState(() => {
     const storedEvents = localStorage.getItem("savedEvents");
@@ -32,8 +30,6 @@ export default function Layout() {
 
   return (
     <>
-      <Header />
-
       <main>
         <Outlet
           context={{
