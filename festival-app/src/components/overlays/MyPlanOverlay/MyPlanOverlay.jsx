@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Toast from "../../feedback/Toast/Toast";
 
 import toggleOnIcon from "../../../assets/icon/toggle-on.svg";
@@ -66,9 +67,9 @@ const toastTimerRef = useRef(null);
             <p className={styles.emptyTitle}>Looks a little empty ...</p>
             <p className={styles.emptyText}>Ready to fill it up?</p>
 
-            <button className={styles.discoverButton} onClick={onClose}>
-              Discover Now
-            </button>
+            <Link to="/schedule">
+              <button className={styles.discoverButton}>Discover Now</button>
+            </Link>
           </div>
         ) : (
           <div className={styles.planContent}>
