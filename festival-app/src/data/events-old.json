@@ -7,8 +7,8 @@
         "time": "15.15",
         "tags": ["music", "alternative rock"],
         "description": "Anastasia blends alternative rock, dreamy melodies, and emotional intensity into a powerful live experience. Expect atmospheric soundscapes, dynamic energy, and music that moves between vulnerability and strength.",
-        "imgLgUrl": "images/lg-img/anastasia.png",
-        "imgSmUrl": "images/sm-img/anastasia.png"
+        "imgLgUrl": "./src/assets/image/lg-img/anastasia.png",
+        "imgSmUrl": "./src/assets/image/sm-img/anastasia.png"
     },
     {
         "id": 2,
@@ -18,8 +18,8 @@
         "time": "22.15",
         "tags": ["music", "rap", "pop"],
         "description": "Benjamin Hav is known for his energetic performances, playful lyrics, and genre-blending sound. Experience a mix of rap, pop, and electronic music as Benjamin Hav brings his unique atmosphere to Blå Sol Festival.",
-        "imgLgUrl": "images/lg-img/benjamin-hav.png",
-        "imgSmUrl": "images/lg-img/sm-img/benjamin-hav.png"
+        "imgLgUrl": "./src/assets/image/lg-img/benjamin-hav.png",
+        "imgSmUrl": "./src/assets/image/sm-img/benjamin-hav.png"
     },
     {
         "id": 3,
@@ -29,8 +29,8 @@
         "time": "23.30",
         "tags": ["music", "indie", "rock"],
         "description": "Bonad creates energetic indie rock with raw emotion, catchy rhythms, and a modern Nordic sound. Look forward to vibrant live music, strong melodies, and an atmosphere filled with energy and movement.",
-        "imgLgUrl": "images/lg-img/bonad.png",
-        "imgSmUrl": "images/lg-img/sm-img/bonad.png"
+        "imgLgUrl": "./src/assets/image/lg-img/bonad.png",
+        "imgSmUrl": "./src/assets/image/sm-img/bonad.png"
     },
     {
         "id": 4,
@@ -40,8 +40,8 @@
         "time": "18.00",
         "tags": ["music", "electronic pop", "rock"],
         "description": "Downtown July blends catchy indie rock, dreamy melodies, and raw energy into an atmospheric live experience. Enjoy an emotional and uplifting concert filled with powerful vocals, vibrant guitars, and late-summer festival vibes.",
-        "imgLgUrl": "images/lg-img/downtown-july.png",
-        "imgSmUrl": "images/lg-img/sm-img/downtown-july.png"
+        "imgLgUrl": "./src/assets/image/lg-img/downtown-july.png",
+        "imgSmUrl": "./src/assets/image/sm-img/downtown-july.png"
     },
     {
         "id": 5,
@@ -51,8 +51,8 @@
         "time": "15.10",
         "tags": ["music", "finnish", "humppa"],
         "description": "Eläkeläiset is a Finish band known for their humorous covers of popular songs reimagined in a lively Finnish humppa style. Expect chaotic energy, surprising song transformations, and a concert experience full of humor and dancing.",
-        "imgLgUrl": "images/lg-img/elakelaiset.png",
-        "imgSmUrl": "images/lg-img/sm-img/elakelaiset.png"
+        "imgLgUrl": "./src/assets/image/lg-img/elakelaiset.png",
+        "imgSmUrl": "./src/assets/image/sm-img/elakelaiset.png"
     },
     {
         "id": 6,
@@ -62,8 +62,8 @@
         "time": "13.45",
         "tags": ["music", "rock", "pop"],
         "description": "Gnags is a legendary band known for their colorful sound, poetic lyrics, and mix of rock, pop, and reggae influences. Enjoy a lively concert experience filled with iconic melodies, warm energy, and Danish music history.",
-        "imgLgUrl": "images/lg-img/gnags.png",
-        "imgSmUrl": "images/lg-img/sm-img/gnags.png"
+        "imgLgUrl": "./src/assets/image/lg-img/gnags.png",
+        "imgSmUrl": "./src/assets/image/sm-img/gnags.png"
     },
     {
         "id": 7,
@@ -73,8 +73,8 @@
         "time": "16.30",
         "tags": ["music", "electronic pop"],
         "description": "Infernal is an electronic pop duo known for their dance hits, energetic performances, and iconic club sound. Experience catchy beats, nostalgic party anthems, and a high-energy atmosphere live on stage.",
-        "imgLgUrl": "images/lg-img/infernal.png",
-        "imgSmUrl": "images/lg-img/sm-img/infernal.png"
+        "imgLgUrl": "./src/assets/image/lg-img/infernal.png",
+        "imgSmUrl": "./src/assets/image/sm-img/infernal.png"
     },
     {
         "id": 8,
@@ -84,8 +84,8 @@
         "time": "15.20",
         "tags": ["music", "pop", "hip hop"],
         "description": "Karoline Mousing creates atmospheric music with emotional storytelling, soft vocals, and a modern Scandinavian sound. Discover an intimate live performance filled with reflective lyrics, calm energy, and immersive melodies.",
-        "imgLgUrl": "images/lg-img/karoline-mousing.png",
-        "imgSmUrl": "images/lg-img/sm-img/karoline-mousing.png"
+        "imgLgUrl": "./src/assets/image/lg-img/karoline-mousing.png",
+        "imgSmUrl": "./src/assets/image/sm-img/karoline-mousing.png"
     },
     {
         "id": 9,
@@ -95,8 +95,8 @@
         "time": "18.00",
         "tags": ["music", "folk", "rock"],
         "description": "Lars Lilholt Band is known for combining folk, rock, and storytelling into energetic live performances. Expect powerful sing-alongs, warm stage presence, and music that brings audiences together.",
-        "imgLgUrl": "images/lg-img/lars-lilholt.png",
-        "imgSmUrl": "images/lg-img/sm-img/lars-lilholt.png"
+        "imgLgUrl": "./src/assets/image/lg-img/lars-lilholt.png",
+        "imgSmUrl": "./src/assets/image/sm-img/lars-lilholt.png"
     },
     {
         "id": 10,
@@ -106,8 +106,8 @@
         "time": "14.00",
         "tags": ["music", "pop", "folk"],
         "description": "Marie Frank creates melodic folk-inspired pop with emotional lyrics, soft vocals, and an intimate atmosphere. Discover a heartfelt live performance filled with reflective songwriting and warm acoustic sounds.",
-        "imgLgUrl": "images/lg-img/marie-frank.png",
-        "imgSmUrl": "images/lg-img/sm-img/marie-frank.png"
+        "imgLgUrl": "./src/assets/image/lg-img/marie-frank.png",
+        "imgSmUrl": "./src/assets/image/sm-img/marie-frank.png"
     },
     {
         "id": 11,
@@ -117,8 +117,8 @@
         "time": "12.50",
         "tags": ["music", "pop", "feel-good"],
         "description": "Natural Born Hippies is known for their feel-good pop sound, laid-back energy, and nostalgic hits from the late 90s and 2000s. Enjoy melodic pop songs, warm summer vibes, and a relaxed concert experience full of nostalgia.",
-        "imgLgUrl": "images/lg-img/natural-born-hippies.png",
-        "imgSmUrl": "images/lg-img/sm-img/natural-born-hippies.png"
+        "imgLgUrl": "./src/assets/image/lg-img/natural-born-hippies.png",
+        "imgSmUrl": "./src/assets/image/sm-img/natural-born-hippies.png"
     },
     {
         "id": 12,
@@ -128,8 +128,8 @@
         "time": "23.40",
         "tags": ["music", "electronic", "hip hop"],
         "description": "Rune Rask & Hampenberg combines electronic dance music, hip hop influences, and high-energy club vibes. Look forward to heavy beats, nostalgic party tracks, and an atmosphere built for dancing late into the night.",
-        "imgLgUrl": "images/lg-img/rune-rask.png",
-        "imgSmUrl": "images/lg-img/sm-img/rune-rask.png"
+        "imgLgUrl": "./src/assets/image/lg-img/rune-rask.png",
+        "imgSmUrl": "./src/assets/image/sm-img/rune-rask.png"
     },
     {
         "id": 13,
@@ -139,8 +139,8 @@
         "time": "11.45",
         "tags": ["music", "electronic pop", "rock"],
         "description": "Saveus is known for their emotional vocals, cinematic sound, and energetic live performances. Enjoy a powerful mix of electronic pop, rock, and atmospheric melodies as he brings his intense musical universe to the stage.",
-        "imgLgUrl": "images/lg-img/saveus.png",
-        "imgSmUrl": "images/lg-img/sm-img/saveus.png"
+        "imgLgUrl": "./src/assets/image/lg-img/saveus.png",
+        "imgSmUrl": "./src/assets/image/sm-img/saveus.png"
     },
     {
         "id": 14,
@@ -150,8 +150,8 @@
         "time": "16.20",
         "tags": ["music", "pop", "electronic"],
         "description": "Selvglad combines energetic pop, electronic elements, and playful lyrics into and upbeat live experience. Expect vibrant rhytms, colorful performances, and an atmosphere focused on fun and movement.",
-        "imgLgUrl": "images/lg-img/selvglad.png",
-        "imgSmUrl": "images/lg-img/sm-img/selvglad.png"
+        "imgLgUrl": "./src/assets/image/lg-img/selvglad.png",
+        "imgSmUrl": "./src/assets/image/sm-img/selvglad.png"
     },
     {
         "id": 15,
@@ -161,8 +161,8 @@
         "time": "21.00",
         "tags": ["music", "rap", "electronic"],
         "description": "Specktors is a duo known for blending rap, electronic music, and a party anthems with high energy and humor. Experience hard-hitting beats, catchy hooks, and a lively concert atmosphere built for dancing and singing along.",
-        "imgLgUrl": "images/lg-img/specktors.png",
-        "imgSmUrl": "images/lg-img/sm-img/specktors.png"
+        "imgLgUrl": "./src/assets/image/lg-img/specktors.png",
+        "imgSmUrl": "./src/assets/image/sm-img/specktors.png"
     },
     {
         "id": 16,
@@ -172,8 +172,8 @@
         "time": "20.50",
         "tags": ["music", "funk", "pop"],
         "description": "Tøsedrenge Tur brings the iconic Danish sound of funk, pop, and reggae-inspired rhythms back to the stage. Experience nostalgic classics, upbeat melodies, and a lively atmosphere filled with Danish music history.",
-        "imgLgUrl": "images/lg-img/tosedrenge.png",
-        "imgSmUrl": "images/lg-img/sm-img/tosedrenge.png"
+        "imgLgUrl": "./src/assets/image/lg-img/tosedrenge.png",
+        "imgSmUrl": "./src/assets/image/sm-img/tosedrenge.png"
     },
     {
         "id": 17,
@@ -183,8 +183,8 @@
         "time": "19.25",
         "tags": ["music", "indie", "rock"],
         "description": "Zar Paulo is known for their energetic indie sound, sharp lyrics, and playful mix of rock, pop, and post-punk influences. Experiences catchy melodies, high energy, and an unforgettable atmosphere made for singing along.",
-        "imgLgUrl": "images/lg-img/zar-paulo.png",
-        "imgSmUrl": "images/lg-img/sm-img/zar-paulo.png"
+        "imgLgUrl": "./src/assets/image/lg-img/zar-paulo.png",
+        "imgSmUrl": "./src/assets/image/sm-img/zar-paulo.png"
     },
     {
         "id": 18,
@@ -194,8 +194,8 @@
         "time": "12.45",
         "tags": ["event", "physical", "funny"],
         "description": "In the Galop Derby, beginners and amateur riders compete in speed, agility, and fun on their favorite hobby horses. Join the competition, showcase your skills, and be part of one of the most memorable hobby horse sports events.",
-        "imgLgUrl": "images/lg-img/galop-derby.png",
-        "imgSmUrl": "images/lg-img/sm-img/galop-derby.png"
+        "imgLgUrl": "./src/assets/image/lg-img/galop-derby.png",
+        "imgSmUrl": "./src/assets/image/sm-img/galop-derby.png"
     },
     {
         "id": 19,
@@ -205,8 +205,8 @@
         "time": "14.00",
         "tags": ["event", "music", "quiz"],
         "description": "Join the music quiz and test your song knowledge with covers by Eläkeläiset. Guess the original songs hidden behind the band's energetic Finnish folk-inspired versions and compete with friends for the highest score.",
-        "imgLgUrl": "images/lg-img/music-quiz.png",
-        "imgSmUrl": "images/lg-img/sm-img/music-quiz.png"
+        "imgLgUrl": "./src/assets/image/lg-img/music-quiz.png",
+        "imgSmUrl": "./src/assets/image/sm-img/music-quiz.png"
     },
     {
         "id": 20,
@@ -216,8 +216,8 @@
         "time": "17.10",
         "tags": ["event", "music", "sing-along"],
         "description": "Protestsange is an event where people come together through music, solidarity, and shared voices. Experience powerful songs, collective singing, and an atmosphere focused on community and expression.",
-        "imgLgUrl": "images/lg-img/protestsange.png",
-        "imgSmUrl": "images/lg-img/sm-img/protestsange.png"
+        "imgLgUrl": "./src/assets/image/lg-img/protestsange.png",
+        "imgSmUrl": "./src/assets/image/sm-img/protestsange.png"
     }
 ]
 
