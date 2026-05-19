@@ -1,5 +1,6 @@
 import EventCard from "../../cards/EventCard/EventCard";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function MyPlanOverlay({ events, savedEvents, toggleSaved, onClose, }) {
   
@@ -36,7 +37,12 @@ const handleNotificationToggle = () => {
       )}
 
       {events.length === 0 ? (
-        <p>You have not saved any events yet.</p>
+        <div>
+          <p>You have not saved any events yet.</p>
+          <Link to="/schedule">
+            <button>Discover now</button>
+          </Link>
+        </div>
       ) : (
         events.map((event) => (
           <EventCard
