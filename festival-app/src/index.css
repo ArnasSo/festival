@@ -1,0 +1,214 @@
+:root {
+/* Primitive (raw) */
+--raw-blue-01: #26448C; /* Primitive.blue-01 */
+
+--raw-blue-02: #009AD5; /* Primitive.blue-02 */
+
+--raw-blue-03: #96D4E5; /* Primitive.blue-03 */
+
+--raw-blue-04: #BCE4F0; /* Primitive.blue-04 */
+
+--raw-blue-05: #E8F0F3; /* Primitive.blue-05 */
+
+--raw-blue-06: #96B3BB; /* Primitive.blue-06 */
+
+--raw-yellow-01: #FFDD4A; /* Primitive.yellow-01 */
+
+--raw-red-01: #E42E31; /* Primitive.red-01 */
+
+--raw-green-01: #49AB57; /* Primitive.green-01 */
+
+--raw-orange-01: #EB6635; /* Primitive.orange-01 */
+
+--raw-pink-01: #F3B0CD; /* Primitive.pink-01 */
+
+--raw-neutral-01: #FFFFFF; /* Primitive.netural-01 */
+
+--raw-neutral-02: #F5F5F5; /* Primitive.neutral-02 */
+
+--raw-neutral-03: #F2F4F8; /* Primitive.netural-03 */
+
+--raw-neutral-04: #DDE1E6; /* Primitive.netural-04 */
+
+--raw-neutral-05: #C1C7CD; /* Primitive.netural-05 */
+
+--raw-neutral-06: #A2A9B0; /* Primitive.netural-06 */
+
+--raw-neutral-07: #878D96; /* Primitive.netural-07 */
+
+--raw-neutral-08: #697077; /* Primitive.netural-08 */
+
+--raw-neutral-09: #4D5358; /* Primitive.netural-09 */
+
+--raw-neutral-10: #343A3F; /* Primitive.netural-10 */
+
+--raw-neutral-11: #21272A; /* Primitive.netural-11 */
+
+--raw-neutral-12: #000000; /* Primitive.netural-12 */
+
+/* Brand (maps to primitives) */
+--brand-primary-01: var(--raw-blue-02); /* Brand.primary-01 -> Primitive.blue-02 */
+
+--brand-primary-02: var(--raw-blue-01); /* Brand.primary-02 -> Primitive.blue-01 */
+
+--brand-primary-03: var(--raw-blue-03); /* Brand.primary-03 -> Primitive.blue-03 */
+
+--brand-secondary-01: var(--raw-yellow-01); /* Brand.secondary-01 -> Primitive.yellow-01 */
+
+--brand-secondary-02: var(--raw-red-01); /* Brand.secondary-02 -> Primitive.red-01 */
+
+--brand-secondary-03: var(--raw-green-01); /* Brand.secondary-03 -> Primitive.green-01 */
+
+--brand-secondary-04: var(--raw-orange-01); /* Brand.secondary-04 -> Primitive.orange-01 */
+
+--brand-secondary-05: var(--raw-pink-01); /* Brand.secondary-05 -> Primitive.pink-01 */
+
+/* Background */
+--bg-01: var(--raw-blue-05); /* Background.bg-01 -> Primitive.blue-05 */
+
+--bg-02: var(--raw-neutral-02); /* Background.bg-02 -> Primitive.neutral-02 */
+
+/* Divider */
+--divider-01: var(--raw-blue-06); /* Divider.devider-01 -> Primitive.blue-06 */
+
+/* Text */
+--text-01: var(--raw-neutral-01); /* Text.text-01 -> Primitive.netural-01 */
+
+--text-02: var(--brand-primary-02); /* Text.text-02 -> Brand.primary-02 */
+
+--text-03: var(--raw-neutral-11); /* Text.text-03 -> Primitive.netural-11 */
+
+/* Semantic */
+--semantic-no-update: var(--raw-blue-06); /* Sementic.no-update -> Primitive.blue-06 */
+
+/* Icon */
+--icon-01: var(--brand-secondary-05); /* Icon.icon-01 -> Brand.secondary-05 */
+
+--icon-02: var(--raw-neutral-01); /* Icon.icon-02 -> Primitive.netural-01 */
+
+
+ /* Font family */
+  --font-family-01: "Bowlby One", cursive;
+  --font-family-02: "Poppins", sans-serif;
+
+  /* Font weight */
+  --font-weight-r: 400;
+  --font-weight-m: 500;
+  --font-weight-b: 600;
+
+  /* Font size */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-4xl: 2rem;     /* 32px */
+  --font-size-5xl: 2.25rem;  /* 36px */
+
+  /* Line height */
+  --line-height-tight: 1.25; /* 125% */
+  --line-height-body: 1.8;   /* 180% */
+  --line-height-m: 1.25rem;  /* 20px */
+  --line-height-l: 1.5rem;   /* 24px */
+
+  /* Letter spacing */
+  --letter-spacing-0: 0;
+  --letter-spacing-wide: 0.02em;
+}
+
+
+.headline-l {
+  font-family: var(--font-family-01);
+  font-weight: var(--font-weight-r);
+  font-size: var(--font-size-5xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.headline-m {
+  font-family: var(--font-family-01);
+  font-weight: var(--font-weight-r);
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.headline-s {
+  font-family: var(--font-family-01);
+  font-weight: var(--font-weight-r);
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.label-xl {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-b);
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-l);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.label-l {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-b);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-l);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.label-m {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-b);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-m);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.label-s {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-b);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-m);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.body-1 {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-m);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.body-2 {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-m);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.caption-l {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-r);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-l);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.caption-m {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-r);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-m);
+  letter-spacing: var(--letter-spacing-0);
+}
+
+.caption-s {
+  font-family: var(--font-family-02);
+  font-weight: var(--font-weight-r);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-m);
+  letter-spacing: var(--letter-spacing-0);
+}
