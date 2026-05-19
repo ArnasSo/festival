@@ -1,7 +1,7 @@
 import LandingEventCard from "../../components/cards/LandingEventCard/LandingEventCard";
 import eventsData from "../../data/events.json";
 import { useOutletContext } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import DetailOverlay from "../../components/overlays/DetailOverlay/DetailOverlay";
 import MyPlanOverlay from "../../components/overlays/MyPlanOverlay/MyPlanOverlay";
 import Header from "../../components/layout/Header/Header";
@@ -51,14 +51,6 @@ export default function LandingPage() {
       slides: [event1, event2],
     },
   };
-
-  useEffect(() => {
-    document.body.classList.add("no-scroll");
-
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
-  }, []);
 
   return (
     <div className={styles.landingPage}>

@@ -1,11 +1,10 @@
 .landingPage {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--bg-01);
 
   padding: 42px 20px 120px;
 
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .quickLinks {
