@@ -1,0 +1,30 @@
+.bottomNav {
+  box-sizing: border-box;
+
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 430px;
+  height: 102px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  padding-top: 24px;
+
+  background-image: url("../../../assets/image/vector-img/navigation-bar.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  z-index: 100;
+
+  bottom: -1px;
+}
+
+.navLink {
+  text-decoration: none;
+}
