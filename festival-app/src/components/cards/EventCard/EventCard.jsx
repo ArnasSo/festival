@@ -1,6 +1,6 @@
 import HeartButton from "../../ui/HeartButton/HeartButton";
 
-export default function EventCard(props) {
+export default function EventCard(props, isSaved, toggleSaved) {
   return (
     <div>
       <div onClick={props.onClick}>
@@ -9,12 +9,7 @@ export default function EventCard(props) {
         <p>{props.location}</p>
         <img src={props.imgSmUrl} alt={props.title} />
       </div>
-      <HeartButton 
-        isSaved={props.isSaved}
-        onClick={(e) => {
-          e.stopPropagation();
-          props.onSave();
-        }} />
+      <HeartButton saved={props.isSaved} toggleSaved={props.toggleSaved} />
     </div>
   );
 }

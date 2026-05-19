@@ -1,13 +1,6 @@
-import { useState } from "react";
-
-export default function HeartButton() {
-  const [saved, setSaved] = useState(false);
-
+export default function HeartButton({ saved, toggleSaved }) {
   return (
-    <button
-      onClick={() => setSaved(!saved)}
-      className="heart-button"
-    >
+    <button onClick={toggleSaved}>
       {saved ? "❤️" : "🤍"}
     </button>
   );

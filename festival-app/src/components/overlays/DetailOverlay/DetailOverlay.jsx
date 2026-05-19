@@ -1,3 +1,4 @@
+import HeartButton from "../../ui/HeartButton/HeartButton";
 import Tag from "../../ui/Tag/Tag";
 
 export default function DetailOverlay(props) {
@@ -14,6 +15,10 @@ export default function DetailOverlay(props) {
       </div>
       <p>{props.description}</p>
       <img src={props.imgSmUrl} alt={props.title} />
+      <HeartButton
+        saved={props.isSaved}
+        toggleSaved={props.toggleSaved}
+      />
     </div>
   );
 }
