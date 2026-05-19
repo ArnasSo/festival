@@ -1,5 +1,9 @@
-export default function Tag(props) {
-    return (
-        <span>{props.label}</span>
-    );
+import styles from "./Tag.module.css";
+
+export default function Tag({ label }) {
+  return (
+    <span className={styles.tag}>
+      {label}
+    </span>
+  );
 }

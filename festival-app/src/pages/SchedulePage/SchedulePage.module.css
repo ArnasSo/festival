@@ -1,0 +1,34 @@
+.schedulePage {
+  min-height: 100vh;
+  background-color: var(--bg-01);
+  padding: 56px 20px 120px;
+}
+
+.title {
+  margin: 0 0 28px;
+
+  font-family: var(--font-family-01);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-r);
+  line-height: var(--line-height-tight);
+  color: var(--text-02);
+  text-align: center;
+}
+
+.timeGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeHeading {
+  margin: 0;
+  padding: 8px 0;
+
+  text-align: center;
+
+  font-family: var(--font-family-02);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-b);
+  line-height: var(--line-height-l);
+  color: var(--brand-primary-01);
+}

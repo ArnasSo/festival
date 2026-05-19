@@ -1,0 +1,21 @@
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 83px;
+  height: 43px;
+
+  padding: 0 16px;
+
+  border-radius: 100px;
+  background-color: var(--bg-01);
+
+  font-family: var(--font-family-02);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-b);
+  line-height: var(--line-height-m);
+  color: var(--text-02);
+
+  white-space: nowrap;
+}
