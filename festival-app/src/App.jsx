@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: "program",
+        path: "schedule",
         element: <SchedulePage />,
       },
       {

@@ -1,5 +1,5 @@
-export default function Tag() {
+export default function Tag(props) {
     return (
-        <></>
+        <span>{props.label}</span>
     );
 }

@@ -1,0 +1,7 @@
+.navButton {
+    opacity: 0.5;
+}
+
+.navButtonActive {
+    opacity: 1;
+}
