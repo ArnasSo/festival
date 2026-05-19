@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import BottomNav from "../src/components/layout/BottomNav/BottomNav";
+import ScrollToTop from "../src/components/utils/ScrollToTop/ScrollToTop";
 import { useEffect, useState } from "react";
 
 export default function Layout() {
@@ -30,6 +31,7 @@ export default function Layout() {
 
   return (
     <>
+      <ScrollToTop />
       <main>
         <Outlet
           context={{

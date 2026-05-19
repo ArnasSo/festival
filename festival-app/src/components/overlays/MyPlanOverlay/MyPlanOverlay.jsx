@@ -14,6 +14,12 @@ import emptyLogo from "../../../assets/image/logo-img/myplan-logo.png";
 export default function MyPlanOverlay({ events, toggleSaved, onClose }) {
   const isEmpty = events.length === 0;
 
+  const sortedEvents = [...events].sort(
+  (a, b) => Number(a.time.replace(".", "")) - Number(b.time.replace(".", ""))
+);
+
+const toastTimerRef = useRef(null);
+
   const [notificationsOn, setNotificationsOn] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
 
@@ -78,7 +84,7 @@ export default function MyPlanOverlay({ events, toggleSaved, onClose }) {
 </button>
 
             <div className={styles.eventList}>
-              {events.map((event) => (
+              {sortedEvents.map((event) => (
                 <article className={styles.eventCard} key={event.id}>
                   <img
                     className={styles.eventImage}

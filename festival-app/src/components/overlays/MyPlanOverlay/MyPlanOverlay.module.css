@@ -26,6 +26,9 @@
   border-radius: 24px 24px 0 0;
   overflow: hidden;
 
+  display: flex;
+  flex-direction: column;
+
   animation: slideUp 0.25s ease-out;
 }
 
@@ -120,10 +123,17 @@
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-b);
   color: var(--text-02);
+  background-color: #FFFFFF;
 }
 
 .planContent {
+  flex: 1;
+  min-height: 0;
+
   padding: 16px 24px 32px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .notificationToggle {
@@ -155,9 +165,18 @@
 }
 
 .eventList {
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: var(--bg-02);
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.eventList::-webkit-scrollbar {
+  display: none;
 }
 
 .eventCard {
@@ -172,6 +191,19 @@
 
   background-color: var(--bg-02);
   border-bottom: 1px solid var(--raw-neutral-04);
+}
+
+.eventCard:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.eventCard:last-child {
+  border-radius: 0 0 10px 10px;
+  border-bottom: 0;
+}
+
+.eventCard:only-child {
+  border-radius: 10px;
 }
 
 .eventCard:last-child {

@@ -1,0 +1,80 @@
+.notFoundPage {
+  height: 100dvh;
+  box-sizing: border-box;
+  background-color: var(--bg-01);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 20px 120px;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 8px;
+
+  font-family: var(--font-family-01);
+  font-size: var(--font-size-5xl);
+  color: var(--text-02);
+}
+
+.subtitle {
+  margin: 0 0 48px;
+
+  font-family: var(--font-family-02);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-b);
+  color: var(--text-03);
+}
+
+.logo {
+  width: 260px;
+  margin-bottom: 56px;
+
+  animation: flyIn 0.8s ease-out;
+}
+
+.text {
+  margin: 0 0 18px;
+
+  font-family: var(--font-family-02);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-m);
+  color: var(--text-03);
+}
+
+.button {
+  min-width: 120px;
+  padding: 10px 24px;
+
+  border: 2px solid var(--text-02);
+  border-radius: 100px;
+
+  font-family: var(--font-family-02);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-b);
+  color: var(--text-02);
+  text-decoration: none;
+  background-color: #FFFFFF;
+}
+
+@keyframes flyIn {
+  from {
+    transform: translateY(80px) scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
