@@ -2,22 +2,16 @@ import EventCard from "../../components/cards/EventCard/EventCard";
 import DetailOverlay from "../../components/overlays/DetailOverlay/DetailOverlay";
 import eventsData from "../../data/events.json";
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function SchedulePage() {
   const [selectedEventId, setSelectedEventId] = useState(null);
-  const [savedEvents, setSavedEvents] = useState([]);
+
+  const { savedEvents, toggleSaved } = useOutletContext();
 
   const selectedEvent = eventsData.find(
-    (event) => event.id === selectedEventId,
+    (event) => event.id === selectedEventId
   );
-
-  const toggleSaved = (id) => {
-    if (savedEvents.includes(id)) {
-      setSavedEvents(savedEvents.filter((eventId) => eventId !== id));
-    } else {
-      setSavedEvents([...savedEvents, id]);
-    }
-  };
 
   return (
     <div>
