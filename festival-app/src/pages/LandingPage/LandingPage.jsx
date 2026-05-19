@@ -5,14 +5,21 @@ import { useEffect, useState } from "react";
 import DetailOverlay from "../../components/overlays/DetailOverlay/DetailOverlay";
 import MyPlanOverlay from "../../components/overlays/MyPlanOverlay/MyPlanOverlay";
 import Header from "../../components/layout/Header/Header";
-import styles from "./LandingPage.module.css";
-
 import HighlightCard from "../../components/cards/HighlightCard/HighlightCard";
+import HighlightOverlay from "../../components/overlays/HighlightOverlay/HighlightOverlay";
+import styles from "./LandingPage.module.css";
 
 import myPlanImg from "../../assets/image/higlight-img/btn-my-plan.png";
 import artistsImg from "../../assets/image/higlight-img/btn-activate-artists.png";
 import eventsImg from "../../assets/image/higlight-img/btn-activate-events.png";
 import djImg from "../../assets/image/higlight-img/btn-deactivate-dj.png";
+
+import artist1 from "../../assets/image/higlight-img/artist1.png";
+import artist2 from "../../assets/image/higlight-img/artist2.png";
+import artist3 from "../../assets/image/higlight-img/artist3.png";
+
+import event1 from "../../assets/image/higlight-img/event1.png";
+import event2 from "../../assets/image/higlight-img/event2.png";
 
 export default function LandingPage() {
   const artists = eventsData.filter((event) => event.type === "artist");
@@ -20,6 +27,7 @@ export default function LandingPage() {
 
   const [selectedEventId, setSelectedEventId] = useState(null);
   const [showMyPlan, setShowMyPlan] = useState(false);
+  const [activeHighlight, setActiveHighlight] = useState(null);
 
   const { savedEvents, toggleSaved } = useOutletContext();
 
@@ -31,42 +39,56 @@ export default function LandingPage() {
     savedEvents.includes(event.id)
   );
 
-  useEffect(() => {
-  document.body.classList.add("no-scroll");
-
-  return () => {
-    document.body.classList.remove("no-scroll");
+  const highlightData = {
+    artists: {
+      title: "Artists",
+      bubbleImage: artistsImg,
+      slides: [artist1, artist2, artist3],
+    },
+    events: {
+      title: "Events",
+      bubbleImage: eventsImg,
+      slides: [event1, event2],
+    },
   };
-}, []);
+
+  useEffect(() => {
+    document.body.classList.add("no-scroll");
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, []);
 
   return (
     <div className={styles.landingPage}>
       <Header />
+
       <section className={styles.quickLinks}>
-  <HighlightCard
-    label="My Plan"
-    image={myPlanImg}
-    onClick={() => setShowMyPlan(true)}
-  />
+        <HighlightCard
+          label="My Plan"
+          image={myPlanImg}
+          onClick={() => setShowMyPlan(true)}
+        />
 
-  <HighlightCard
-    label="Artists"
-    image={artistsImg}
-    onClick={() => console.log("Open artists highlight later")}
-  />
+        <HighlightCard
+          label="Artists"
+          image={artistsImg}
+          onClick={() => setActiveHighlight("artists")}
+        />
 
-  <HighlightCard
-    label="Events"
-    image={eventsImg}
-    onClick={() => console.log("Open events highlight later")}
-  />
+        <HighlightCard
+          label="Events"
+          image={eventsImg}
+          onClick={() => setActiveHighlight("events")}
+        />
 
-  <HighlightCard
-    label="DJ Sets"
-    image={djImg}
-    disabled
-  />
-</section>
+        <HighlightCard
+          label="DJ Sets"
+          image={djImg}
+          disabled
+        />
+      </section>
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>ARTISTS</h2>
@@ -118,6 +140,15 @@ export default function LandingPage() {
           savedEvents={savedEvents}
           toggleSaved={toggleSaved}
           onClose={() => setShowMyPlan(false)}
+        />
+      )}
+
+      {activeHighlight && (
+        <HighlightOverlay
+          title={highlightData[activeHighlight].title}
+          bubbleImage={highlightData[activeHighlight].bubbleImage}
+          slides={highlightData[activeHighlight].slides}
+          onClose={() => setActiveHighlight(null)}
         />
       )}
     </div>
