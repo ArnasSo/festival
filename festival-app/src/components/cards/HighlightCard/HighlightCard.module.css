@@ -1,0 +1,30 @@
+.card {
+  border: 0;
+  background: none;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.card:disabled {
+  cursor: default;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.label {
+  font-family: var(--font-family-02);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-b);
+  line-height: var(--line-height-m);
+  color: var(--text-02);
+}

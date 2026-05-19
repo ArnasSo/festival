@@ -4,6 +4,14 @@ import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import DetailOverlay from "../../components/overlays/DetailOverlay/DetailOverlay";
 import MyPlanOverlay from "../../components/overlays/MyPlanOverlay/MyPlanOverlay";
+import styles from "./LandingPage.module.css";
+
+import HighlightCard from "../../components/cards/HighlightCard/HighlightCard";
+
+import myPlanImg from "../../assets/image/higlight-img/btn-my-plan.png";
+import artistsImg from "../../assets/image/higlight-img/btn-activate-artists.png";
+import eventsImg from "../../assets/image/higlight-img/btn-activate-events.png";
+import djImg from "../../assets/image/higlight-img/btn-deactivate-dj.png";
 
 export default function LandingPage() {
   const artists = eventsData.filter((event) => event.type === "artist");
@@ -15,7 +23,7 @@ export default function LandingPage() {
   const { savedEvents, toggleSaved } = useOutletContext();
 
   const selectedEvent = eventsData.find(
-    (event) => event.id === selectedEventId,
+    (event) => event.id === selectedEventId
   );
 
   const plannedEvents = eventsData.filter((event) =>
@@ -23,35 +31,62 @@ export default function LandingPage() {
   );
 
   return (
-    <div>
+    <div className={styles.landingPage}>
+      <section className={styles.quickLinks}>
+  <HighlightCard
+    label="My Plan"
+    image={myPlanImg}
+    onClick={() => setShowMyPlan(true)}
+  />
 
-      <button onClick={() => setShowMyPlan(true)}>
-        My Plan
-      </button>
+  <HighlightCard
+    label="Artists"
+    image={artistsImg}
+    onClick={() => console.log("Open artists highlight later")}
+  />
 
-      <div>
-        <h1>Artists</h1>
-        {artists.map((event) => (
-          <LandingEventCard
-            key={event.id}
-            title={event.name}
-            imgLgUrl={event.imgLgUrl}
-            onClick={() => setSelectedEventId(event.id)}
-          />
-        ))}
-      </div>
+  <HighlightCard
+    label="Events"
+    image={eventsImg}
+    onClick={() => console.log("Open events highlight later")}
+  />
 
-      <div>
-        <h1>Events</h1>
-        {events.map((event) => (
-          <LandingEventCard
-            key={event.id}
-            title={event.name}
-            imgLgUrl={event.imgLgUrl}
-            onClick={() => setSelectedEventId(event.id)}
-          />
-        ))}
-      </div>
+  <HighlightCard
+    label="DJ Sets"
+    image={djImg}
+    disabled
+  />
+</section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>ARTISTS</h2>
+
+        <div className={styles.horizontalScroll}>
+          {artists.map((event) => (
+            <LandingEventCard
+              key={event.id}
+              title={event.name}
+              imgLgUrl={event.imgLgUrl}
+              onClick={() => setSelectedEventId(event.id)}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>EVENTS</h2>
+
+        <div className={styles.horizontalScroll}>
+          {events.map((event) => (
+            <LandingEventCard
+              key={event.id}
+              title={event.name}
+              imgLgUrl={event.imgLgUrl}
+              onClick={() => setSelectedEventId(event.id)}
+            />
+          ))}
+        </div>
+      </section>
 
       {selectedEvent && (
         <DetailOverlay

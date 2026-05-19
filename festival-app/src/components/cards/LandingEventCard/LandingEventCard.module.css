@@ -1,0 +1,44 @@
+.card {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+
+  width: 213px;
+  height: 146px;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+
+  width: 213px;
+  height: 146px;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image {
+  position: absolute;
+  left: 9px;
+  top: 12px;
+
+  width: 195px;
+  height: 120px;
+
+  object-fit: cover;
+  z-index: 2;
+}
+
+.title {
+  margin: 8px 0 0;
+
+  font-family: var(--font-family-02);
+  font-size: 16px;
+  font-weight: var(--font-weight-m);
+  line-height: 1.25;
+  color: var(--text-03);
+}

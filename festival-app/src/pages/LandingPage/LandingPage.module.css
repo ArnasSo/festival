@@ -1,0 +1,64 @@
+.landingPage {
+  min-height: 100vh;
+  background-color: var(--bg-01);
+
+  padding: 24px 20px 120px;
+
+  overflow-x: hidden;
+}
+
+.quickLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 28px;
+}
+
+.section {
+  position: relative;
+
+  margin-bottom: 32px;
+  padding-top: 28px;
+}
+
+.section::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -20px;
+
+  width: calc(100% + 40px);
+  height: 1px;
+
+  background-color: var(--raw-neutral-04);
+}
+
+.section:first-of-type::before {
+  display: none;
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+
+  font-family: var(--font-family-01);
+  font-size: 24px;
+  font-weight: var(--font-weight-r);
+  line-height: 1.2;
+  color: var(--text-02);
+}
+
+.horizontalScroll {
+  display: flex;
+  gap: 24px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding-bottom: 8px;
+}
+
+.horizontalScroll::-webkit-scrollbar {
+  display: none;
+}
