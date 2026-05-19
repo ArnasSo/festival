@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useOutletContext } from "react-router-dom";
 
 import EventCard from "../../components/cards/EventCard/EventCard";
@@ -8,6 +8,9 @@ import styles from "./SchedulePage.module.css";
 
 export default function SchedulePage() {
   const [selectedEventId, setSelectedEventId] = useState(null);
+  const [highlightHour, setHighlightHour] = useState(null);
+
+  const hourRefs = useRef({});
   const { savedEvents, toggleSaved } = useOutletContext();
 
   const selectedEvent = eventsData.find(
@@ -28,12 +31,38 @@ export default function SchedulePage() {
       return groups;
     }, {});
 
+  useEffect(() => {
+    const targetHour = "12.00";
+
+    const timer = setTimeout(() => {
+      hourRefs.current[targetHour]?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      setHighlightHour(targetHour);
+
+      // Fade highlight back after animation
+      setTimeout(() => {
+        setHighlightHour(null);
+      }, 2200);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className={styles.schedulePage}>
       <h1 className={styles.title}>PROGRAM</h1>
 
       {Object.entries(groupedEvents).map(([hour, events]) => (
-        <section key={hour} className={styles.timeGroup}>
+        <section
+          key={hour}
+          className={styles.timeGroup}
+          ref={(element) => {
+            hourRefs.current[hour] = element;
+          }}
+        >
           <h2 className={styles.timeHeading}>{hour}</h2>
 
           {events.map((event, index) => (
@@ -49,6 +78,7 @@ export default function SchedulePage() {
               isFirst={index === 0}
               isLast={index === events.length - 1}
               isSingle={events.length === 1}
+              highlighted={highlightHour === hour}
             />
           ))}
         </section>

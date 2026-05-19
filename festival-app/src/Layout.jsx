@@ -1,11 +1,24 @@
 import { Outlet } from "react-router-dom";
 import BottomNav from "../src/components/layout/BottomNav/BottomNav";
 import Header from "../src/components/layout/Header/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Layout() {
 
-  const [savedEvents, setSavedEvents] = useState([]);
+  // Loads saved events from localStorage when app starts
+  const [savedEvents, setSavedEvents] = useState(() => {
+    const storedEvents = localStorage.getItem("savedEvents");
+
+    return storedEvents ? JSON.parse(storedEvents) : [];
+  });
+
+  // Saves updated likes to localStorage
+  useEffect(() => {
+    localStorage.setItem(
+      "savedEvents",
+      JSON.stringify(savedEvents)
+    );
+  }, [savedEvents]);
 
   const toggleSaved = (id) => {
     if (savedEvents.includes(id)) {
@@ -20,13 +33,16 @@ export default function Layout() {
   return (
     <>
       <Header />
+
       <main>
-        <Outlet context={{
-          savedEvents,
-          toggleSaved,
-          }} 
+        <Outlet
+          context={{
+            savedEvents,
+            toggleSaved,
+          }}
         />
       </main>
+
       <BottomNav />
     </>
   );

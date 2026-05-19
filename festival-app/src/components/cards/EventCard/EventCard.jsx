@@ -12,14 +12,16 @@ export default function EventCard({
   isFirst,
   isLast,
   isSingle,
+  highlighted,
 }) {
   const cardClasses = `
-    ${styles.card}
-    ${isSingle ? styles.single : ""}
-    ${isFirst && !isSingle ? styles.first : ""}
-    ${isLast && !isSingle ? styles.last : ""}
-    ${!isFirst && !isLast && !isSingle ? styles.middle : ""}
-  `;
+  ${styles.card}
+  ${highlighted ? styles.highlighted : ""}
+  ${isSingle ? styles.single : ""}
+  ${isFirst && !isSingle ? styles.first : ""}
+  ${isLast && !isSingle ? styles.last : ""}
+  ${!isFirst && !isLast && !isSingle ? styles.middle : ""}
+`;
 
   return (
     <article className={cardClasses}>

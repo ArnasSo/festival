@@ -79,3 +79,25 @@
 .last {
   border-radius: 0 0 10px 10px;
 }
+
+.highlighted {
+  animation: highlightPulse 2.2s ease;
+}
+
+@keyframes highlightPulse {
+  0% {
+    background-color: var(--bg-02);
+  }
+
+  20% {
+    background-color: var(--raw-blue-04);
+  }
+
+  65% {
+    background-color: var(--raw-blue-04);
+  }
+
+  100% {
+    background-color: var(--bg-02);
+  }
+}
