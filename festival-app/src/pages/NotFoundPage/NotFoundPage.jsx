@@ -7,10 +7,13 @@ import notFoundLogo from "../../assets/image/logo-img/404page-logo.png";
 export default function NotFoundPage() {
 useEffect(() => {
     document.body.classList.add("no-scroll");
+    // on mount we make sure it gets class of no-scroll to prevent scrolling
 
     return () => {
       document.body.classList.remove("no-scroll");
     };
+    // cleanup for when it unmounts
+    // we need to unmount so it doesnt stay on other pages!
   }, []);
 
   return (

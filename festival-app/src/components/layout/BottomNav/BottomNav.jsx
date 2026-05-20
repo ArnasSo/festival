@@ -7,7 +7,8 @@ import scheduleIcon from "../../../assets/icon/program.svg";
 import mapIcon from "../../../assets/icon/map.svg";
 import artistIcon from "../../../assets/icon/artist.svg";
 import menuIcon from "../../../assets/icon/menu.svg";
-
+// our mobile navigation component
+// is shown on all pages of the app with the help of Layout.jsx!
 export default function BottomNav() {
   return (
     <nav className={styles.bottomNav}>
@@ -16,6 +17,7 @@ export default function BottomNav() {
           <NavButton label="Start" icon={startIcon} active={isActive} />
         )}
       </NavLink>
+      {/* only place where we use end to prevent / staying active  */}
 
       <NavLink to="/schedule" className={styles.navLink}>
         {({ isActive }) => (

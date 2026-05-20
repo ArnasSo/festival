@@ -26,26 +26,37 @@ import event2 from "../../assets/image/higlight-img/event2.png";
 export default function LandingPage() {
   const artists = eventsData.filter((event) => event.type === "artist");
   const events = eventsData.filter((event) => event.type === "event");
+  // we seperate event data into two grups to display on landing page
+  // we rread json, inside we can find "type"
 
   const [selectedEventId, setSelectedEventId] = useState(null);
+  // store which event is opened in delailoverlay
+  // null means no overlay is open
   const [showMyPlan, setShowMyPlan] = useState(false);
+  //state to control my plan overlay visibility
   const [activeHighlight, setActiveHighlight] = useState(null);
-
+  // controls which story overlay is open
   const { savedEvents, toggleSaved } = useOutletContext();
+  // shared saved event state from layouut.jsx
 
   const selectedEvent = eventsData.find(
     (event) => event.id === selectedEventId
   );
+  // find all data for selected event
 
   const [watchedHighlights, setWatchedHighlights] = useState(() => {
     const storedHighlights = localStorage.getItem("watchedHighlights");
 
     return storedHighlights ? JSON.parse(storedHighlights) : {};
   });
+  // we store in state, watched highlight cooldowns
+  // loaded from localstorage so disabled highlights sttay disabled after page refresh
 
   const plannedEvents = eventsData.filter((event) =>
     savedEvents.includes(event.id)
   );
+  // events shown inside my plan overlay
+  // onyl includes ones which are saved
 
   const highlightData = {
     artists: {
@@ -59,25 +70,38 @@ export default function LandingPage() {
       slides: [event1, event2],
     },
   };
+  // ddata used by highlightoverlay
+  // keep story content grouped in one object
 
   const WATCH_TIME = 60 * 1000;
+  // cooldown time before highlight becomes active again (can be watched again)
 
   const isHighlightDisabled = (type) => {
+    // checks if highlight should be disabled
     const watchedUntil = watchedHighlights[type];
+    // stores future timestamp
 
     return watchedUntil && Date.now() < watchedUntil;
+    // idisabled if timestamp exists
+    // and current time has not passed it yet
+
   };
 
+  // marks highlight as watchged and disabled it for WATCH_TIME
   const markHighlightWatched = (type) => {
     const updatedHighlights = {
       ...watchedHighlights,
+      // keep existing watched highlights
       [type]: Date.now() + WATCH_TIME,
+      // add and update current highlight cooldowns
     };
 
     setWatchedHighlights(updatedHighlights);
+    // we update the state
     localStorage.setItem("watchedHighlights", JSON.stringify(updatedHighlights));
+    // then save cooldown in localstorage
 
-    // Refresh state after 1 minute so the icon becomes active again without reloading
+    // gwhen timer ends, remove highlight from watched list
     setTimeout(() => {
       setWatchedHighlights((currentHighlights) => {
         const refreshedHighlights = { ...currentHighlights };
@@ -102,13 +126,17 @@ export default function LandingPage() {
           label="My Plan"
           image={myPlanImg}
           onClick={() => setShowMyPlan(true)}
+          // open my plan overlay
         />
 
         <HighlightCard
           label="Artists"
           image={isHighlightDisabled("artists") ? artistsInactiveImg : artistsImg}
+          // highlight is inactive? show inactive image
           onClick={() => setActiveHighlight("artists")}
+          // opens overlay
           disabled={isHighlightDisabled("artists")}
+          // disabled while on cooldown
         />
 
         <HighlightCard
@@ -122,9 +150,11 @@ export default function LandingPage() {
           label="DJ Sets"
           image={djImg}
           disabled
+          // we have dj sets disabled because we didnt make it
         />
       </section>
 
+      {/* artist horizontal section */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>ARTISTS</h2>
 
@@ -135,11 +165,13 @@ export default function LandingPage() {
               title={event.name}
               imgLgUrl={event.imgLgUrl}
               onClick={() => setSelectedEventId(event.id)}
+              // ope details for clicked artist
             />
           ))}
         </div>
       </section>
 
+          {/* event horizontal section */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>EVENTS</h2>
 
@@ -154,7 +186,7 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
-
+    {/* event detail overlay */}
       {selectedEvent && (
         <DetailOverlay
           title={selectedEvent.name}
@@ -164,30 +196,39 @@ export default function LandingPage() {
           tags={selectedEvent.tags}
           description={selectedEvent.description}
           isSaved={savedEvents.includes(selectedEvent.id)}
+          // check if selected event is saved
           toggleSaved={() => toggleSaved(selectedEvent.id)}
+           // save/unsave selected event
           onClose={() => setSelectedEventId(null)}
+          // close overlay...
         />
       )}
 
+       {/* My Plan overlay */}
       {showMyPlan && (
         <MyPlanOverlay
           events={plannedEvents}
           savedEvents={savedEvents}
           toggleSaved={toggleSaved}
           onClose={() => setShowMyPlan(false)}
+          // close my plan overlay :)
         />
       )}
 
+       {/* Highlight/story overlay */}
       {activeHighlight && (
         <HighlightOverlay
           title={highlightData[activeHighlight].title}
           bubbleImage={highlightData[activeHighlight].bubbleImage}
           slides={highlightData[activeHighlight].slides}
+          // when story finishes
+          // mark as watched and close overlay
           onFinish={() => {
             markHighlightWatched(activeHighlight);
             setActiveHighlight(null);
           }}
           onClose={() => setActiveHighlight(null)}
+          // close overlay without marking watched
         />
       )}
     </div>
