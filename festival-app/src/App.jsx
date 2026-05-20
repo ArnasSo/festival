@@ -4,9 +4,10 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import SchedulePage from "./pages/SchedulePage/SchedulePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import './index.css'
-
+// this is our routing setup
 const router = createBrowserRouter([
   {
+    // we create "map" for the app - it says = when url looks like this - show this component
     path: "/",
     element: <Layout />,
     children: [
