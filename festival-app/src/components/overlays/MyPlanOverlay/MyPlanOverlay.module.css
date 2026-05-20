@@ -136,6 +136,24 @@
   flex-direction: column;
 }
 
+.notificationRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+.toastSlot {
+  width: 250px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .notificationToggle {
   width: 90px;
   height: 42px;
@@ -144,12 +162,10 @@
   align-items: center;
   justify-content: center;
 
-  margin-left: auto;
-  margin-bottom: 16px;
-
   border: 0;
   background: none;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .notificationToggle img {

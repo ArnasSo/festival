@@ -45,3 +45,41 @@
     transform: translate(-50%, 16px) scale(0.98);
   }
 }
+
+.inline {
+  position: static;
+  transform: none;
+
+  width: 100%;
+  max-width: 250px;
+
+  padding: 8px 14px;
+  border-width: 6px;
+
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-m);
+
+  animation: inlineToastInOut 4s ease-in-out forwards;
+}
+
+@keyframes inlineToastInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(12px) scale(0.96);
+  }
+
+  18% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(12px) scale(0.98);
+  }
+}

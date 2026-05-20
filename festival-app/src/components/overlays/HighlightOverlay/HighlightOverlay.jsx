@@ -9,12 +9,13 @@ export default function HighlightOverlay({
   bubbleImage,
   slides,
   onClose,
+  onFinish,
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goNext = () => {
     if (currentIndex >= slides.length - 1) {
-      onClose();
+      onFinish();
       return;
     }
 

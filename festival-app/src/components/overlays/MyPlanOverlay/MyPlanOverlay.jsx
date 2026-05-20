@@ -16,33 +16,37 @@ export default function MyPlanOverlay({ events, toggleSaved, onClose }) {
   const isEmpty = events.length === 0;
 
   const sortedEvents = [...events].sort(
-  (a, b) => Number(a.time.replace(".", "")) - Number(b.time.replace(".", ""))
-);
-
-const toastTimerRef = useRef(null);
-
-  const [notificationsOn, setNotificationsOn] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
-
-  const toggleNotifications = () => {
-  const nextValue = !notificationsOn;
-
-  setNotificationsOn(nextValue);
-  setToastMessage(
-    nextValue
-      ? "You will get a reminder."
-      : "You won't get a reminder."
+    (a, b) => Number(a.time.replace(".", "")) - Number(b.time.replace(".", ""))
   );
 
-  // we clear the old timer, so spam-clicking does not make the toast disappear randomly
-  if (toastTimerRef.current) {
-    clearTimeout(toastTimerRef.current);
-  }
+  const toastTimerRef = useRef(null);
 
-  toastTimerRef.current = setTimeout(() => {
-    setToastMessage("");
-  }, 4000);
-};
+  const [notificationsOn, setNotificationsOn] = useState(true);
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastKey, setToastKey] = useState(0);
+
+  const toggleNotifications = () => {
+    const nextValue = !notificationsOn;
+
+    setNotificationsOn(nextValue);
+    setToastMessage(
+      nextValue
+        ? "You will get a reminder."
+        : "You won't get a reminder."
+    );
+
+    // we force the toast animation to restart on every click otherwise the css animation get's messed up and keeps making toast dissapear after few clicks
+    setToastKey((currentKey) => currentKey + 1);
+
+    // we clear the old timer, so spam-clicking does not make the toast disappear randomly
+    if (toastTimerRef.current) {
+      clearTimeout(toastTimerRef.current);
+    }
+
+    toastTimerRef.current = setTimeout(() => {
+      setToastMessage("");
+    }, 4000);
+  };
 
   return (
     <div className={styles.overlay}>
@@ -73,16 +77,24 @@ const toastTimerRef = useRef(null);
           </div>
         ) : (
           <div className={styles.planContent}>
-            <button
-  className={styles.notificationToggle}
-  onClick={toggleNotifications}
-  type="button"
->
-  <img
-    src={notificationsOn ? toggleOnIcon : toggleOffIcon}
-    alt=""
-  />
-</button>
+            <div className={styles.notificationRow}>
+              <div className={styles.toastSlot}>
+                {toastMessage && (
+                  <Toast key={toastKey} message={toastMessage} inline />
+                )}
+              </div>
+
+              <button
+                className={styles.notificationToggle}
+                onClick={toggleNotifications}
+                type="button"
+              >
+                <img
+                  src={notificationsOn ? toggleOnIcon : toggleOffIcon}
+                  alt=""
+                />
+              </button>
+            </div>
 
             <div className={styles.eventList}>
               {sortedEvents.map((event) => (
@@ -108,7 +120,6 @@ const toastTimerRef = useRef(null);
             </div>
           </div>
         )}
-        {toastMessage && <Toast message={toastMessage} />}
       </section>
     </div>
   );

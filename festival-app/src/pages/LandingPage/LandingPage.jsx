@@ -1,7 +1,7 @@
 import LandingEventCard from "../../components/cards/LandingEventCard/LandingEventCard";
 import eventsData from "../../data/events.json";
 import { useOutletContext } from "react-router-dom";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 import DetailOverlay from "../../components/overlays/DetailOverlay/DetailOverlay";
 import MyPlanOverlay from "../../components/overlays/MyPlanOverlay/MyPlanOverlay";
 import Header from "../../components/layout/Header/Header";
@@ -13,6 +13,8 @@ import myPlanImg from "../../assets/image/higlight-img/btn-my-plan.png";
 import artistsImg from "../../assets/image/higlight-img/btn-activate-artists.png";
 import eventsImg from "../../assets/image/higlight-img/btn-activate-events.png";
 import djImg from "../../assets/image/higlight-img/btn-deactivate-dj.png";
+import artistsInactiveImg from "../../assets/image/higlight-img/btn-deactivate-artists.png";
+import eventsInactiveImg from "../../assets/image/higlight-img/btn-deactivate-events.png";
 
 import artist1 from "../../assets/image/higlight-img/artist1.png";
 import artist2 from "../../assets/image/higlight-img/artist2.png";
@@ -35,6 +37,12 @@ export default function LandingPage() {
     (event) => event.id === selectedEventId
   );
 
+  const [watchedHighlights, setWatchedHighlights] = useState(() => {
+    const storedHighlights = localStorage.getItem("watchedHighlights");
+
+    return storedHighlights ? JSON.parse(storedHighlights) : {};
+  });
+
   const plannedEvents = eventsData.filter((event) =>
     savedEvents.includes(event.id)
   );
@@ -52,6 +60,39 @@ export default function LandingPage() {
     },
   };
 
+  const WATCH_TIME = 60 * 1000;
+
+  const isHighlightDisabled = (type) => {
+    const watchedUntil = watchedHighlights[type];
+
+    return watchedUntil && Date.now() < watchedUntil;
+  };
+
+  const markHighlightWatched = (type) => {
+    const updatedHighlights = {
+      ...watchedHighlights,
+      [type]: Date.now() + WATCH_TIME,
+    };
+
+    setWatchedHighlights(updatedHighlights);
+    localStorage.setItem("watchedHighlights", JSON.stringify(updatedHighlights));
+
+    // Refresh state after 1 minute so the icon becomes active again without reloading
+    setTimeout(() => {
+      setWatchedHighlights((currentHighlights) => {
+        const refreshedHighlights = { ...currentHighlights };
+        delete refreshedHighlights[type];
+
+        localStorage.setItem(
+          "watchedHighlights",
+          JSON.stringify(refreshedHighlights)
+        );
+
+        return refreshedHighlights;
+      });
+    }, WATCH_TIME);
+  };
+
   return (
     <div className={styles.landingPage}>
       <Header />
@@ -65,14 +106,16 @@ export default function LandingPage() {
 
         <HighlightCard
           label="Artists"
-          image={artistsImg}
+          image={isHighlightDisabled("artists") ? artistsInactiveImg : artistsImg}
           onClick={() => setActiveHighlight("artists")}
+          disabled={isHighlightDisabled("artists")}
         />
 
         <HighlightCard
           label="Events"
-          image={eventsImg}
+          image={isHighlightDisabled("events") ? eventsInactiveImg : eventsImg}
           onClick={() => setActiveHighlight("events")}
+          disabled={isHighlightDisabled("events")}
         />
 
         <HighlightCard
@@ -140,6 +183,10 @@ export default function LandingPage() {
           title={highlightData[activeHighlight].title}
           bubbleImage={highlightData[activeHighlight].bubbleImage}
           slides={highlightData[activeHighlight].slides}
+          onFinish={() => {
+            markHighlightWatched(activeHighlight);
+            setActiveHighlight(null);
+          }}
           onClose={() => setActiveHighlight(null)}
         />
       )}
