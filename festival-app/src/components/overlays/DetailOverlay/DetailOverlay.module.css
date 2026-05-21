@@ -21,7 +21,7 @@
   max-width: 430px;
   margin: 0 auto;
 
-  max-height: 78vh;
+  height: 640px;
   overflow-y: auto;
 
   background-color: var(--raw-neutral-01);
@@ -71,7 +71,7 @@
 
 .hero {
   position: relative;
-  height: 190px;
+  height: 207px;
 
   display: flex;
   align-items: center;
